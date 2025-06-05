@@ -31,20 +31,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-# Django REST Framework
-    'rest_framework',
-    'subscriptions',
-    'products',
-    'accounts'
 
-]
 
 
 
@@ -57,7 +44,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'products.middleware.SubscriptionRequiredMiddleware',
+    #'products.middleware.SubscriptionRequiredMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -139,3 +126,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'accounts.CustomUser'
+BOT_TOKEN = os.getenv("BOT_TOKEN")

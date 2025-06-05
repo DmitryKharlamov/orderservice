@@ -1,4 +1,4 @@
-version: '3.9'
+
 
 services:
   db:
@@ -24,7 +24,17 @@ services:
       - db
     env_file: .env
 
+  bot:
+    build:
+      context: ./bot
+    volumes:
+      - ./bot:/app
+    working_dir: /app
+    command: ["python", "main.py"]
+    depends_on:
+      - db
+    env_file:
+      - .env
+
 volumes:
   postgres_data:
-
-
