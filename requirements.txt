@@ -4,3 +4,7 @@ djangorestframework
 python-telegram-bot>=20.0
 requests
 python-dotenv
+requests
+python-telegram-bot
+python-dotenv
+sqlalchemy
