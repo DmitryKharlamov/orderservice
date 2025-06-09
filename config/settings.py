@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'subscriptions',
     'products.apps.ProductsConfig',
     'accounts',
+    'rest_framework_simplejwt',
+
 
 ]
 
@@ -140,3 +142,11 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'accounts.CustomUser'
 BOT_TOKEN = os.getenv("BOT_TOKEN")
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    )
+}
