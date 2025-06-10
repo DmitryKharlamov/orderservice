@@ -57,7 +57,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    #'products.middleware.SubscriptionRequiredMiddleware',
+    'products.middleware.SubscriptionRequiredMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -140,3 +140,10 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'accounts.CustomUser'
 BOT_TOKEN = os.getenv("BOT_TOKEN")
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+        # можешь оставить JWT как второй способ, если хочешь:
+        # 'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
