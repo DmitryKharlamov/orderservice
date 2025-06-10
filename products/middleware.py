@@ -15,7 +15,7 @@ class SubscriptionRequiredMiddleware:
         # Middleware работает только на этих путях
         protected_paths = [
             '/api/orders/',
-            '/api/tariffs/',
+
         ]
 
         if any(path.startswith(p) for p in protected_paths):
