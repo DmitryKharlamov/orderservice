@@ -143,7 +143,6 @@ BOT_TOKEN = os.getenv("BOT_TOKEN")
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.SessionAuthentication',
-        # можешь оставить JWT как второй способ, если хочешь:
-        # 'rest_framework_simplejwt.authentication.JWTAuthentication',
+
     ),
 }
