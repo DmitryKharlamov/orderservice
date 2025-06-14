@@ -1,0 +1,61 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches
+*.log
+*.pot
+*.pyc
+
+# Virtual environments
+venv/
+env/
+
+# Django-specific
+*.sqlite3
+db.sqlite3
+*.log
+staticfiles/
+media/
+local_settings.py
+
+# Environment files
+.env
+.env.*
+
+# Migrations cache (но не миграции сами)
+**/__pycache__/
+*/migrations/__pycache__/
+
+# PyCharm / IntelliJ IDEA
+.idea/
+
+# VSCode
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Docker artifacts
+*.pid
+*.seed
+*.pid.lock
+*.db-journal
+*.sock
+docker-compose.override.yml
+*.tar
+
+# PostgreSQL dumps
+*.sql
+*.dump
+
+# Node/npm artifacts (если используется для фронтенда)
+node_modules/
+dist/
+build/
+
+# JWT token files (если сохраняются)
+*.jwt
+*.token
