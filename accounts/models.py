@@ -6,7 +6,7 @@ from django.db import models
 
 class CustomUser(AbstractUser):
     phone = models.CharField(max_length=20, unique=True)
-    telegram_id = models.CharField(max_length=50, blank=True, null=True)
+    telegram_id = models.CharField(max_length=50, blank=True, default='')
 
 
 

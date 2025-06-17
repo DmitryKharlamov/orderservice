@@ -8,9 +8,12 @@ class TariffViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = TariffSerializer
 
 class UserSubscriptionViewSet(viewsets.ModelViewSet):
-    queryset = UserSubscription.objects.all()
     serializer_class = UserSubscriptionSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
+
+    def get_queryset(self):
+        # Только подписки текущего пользователя
+        return UserSubscription.objects.filter(user=self.request.user)
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
