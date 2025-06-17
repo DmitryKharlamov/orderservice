@@ -47,7 +47,13 @@ def test_create_order():
     # Делаем POST-запрос
     response = client.post('/api/orders/', data)
 
-    # Проверки
+
     assert response.status_code == 201
     assert response.data['product_name'] == 'Пицца'
     assert response.data['quantity'] == 2
+
+
+    # Делаем GET-запрос
+    response = client.get('/api/orders/')
+    assert response.status_code == 200
+    assert any(order['product_name'] == 'Пицца' for order in response.data)
