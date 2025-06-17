@@ -8,3 +8,5 @@ requests
 python-telegram-bot
 python-dotenv
 sqlalchemy
+python-telegram-bot
+pyTelegramBotAPI
