@@ -17,4 +17,3 @@ class OrderViewSet(viewsets.ModelViewSet):
         from accounts.models import CustomUser
         updated_user = CustomUser.objects.get(pk=self.request.user.pk)
         notify_telegram(updated_user)
-

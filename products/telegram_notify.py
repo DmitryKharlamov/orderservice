@@ -4,11 +4,8 @@ from accounts.models import CustomUser
 
 def notify_telegram(user):
     user = CustomUser.objects.get(pk=user.pk)
-
     if not user.telegram_id:
         print(f"❌ У пользователя {user.phone} нет telegram_id. Уведомление не отправлено.")
-        return
-
     bot = telebot.TeleBot(settings.BOT_TOKEN)
     msg = "Вам пришёл новый заказ!"
 
