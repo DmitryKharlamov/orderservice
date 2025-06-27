@@ -8,7 +8,7 @@ from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, Con
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-
+from bot.models import CustomUser
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -18,8 +18,6 @@ load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 DATABASE_URL = os.getenv("DATABASE_URL")
 
-# SQLAlchemy
-from bot.models import CustomUser
 
 engine = create_engine(DATABASE_URL)
 Session = sessionmaker(bind=engine)

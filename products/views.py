@@ -12,8 +12,7 @@ class OrderViewSet(viewsets.ModelViewSet):
         return Order.objects.filter(user=self.request.user)
 
     def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
+        user = self.request.user
+        serializer.save(user=user)
 
-        from accounts.models import CustomUser
-        updated_user = CustomUser.objects.get(pk=self.request.user.pk)
-        notify_telegram(updated_user)
+        notify_telegram(user)
