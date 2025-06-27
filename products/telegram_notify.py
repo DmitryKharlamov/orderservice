@@ -1,6 +1,6 @@
 import telebot
 from django.conf import settings
-from accounts.models import CustomUser
+
 
 def notify_telegram(user):
     if not user.telegram_id:
